@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-family: "Roboto", sans-serif;
+}
+.navbar {
+  grid-area: navbar;
+  background-color: #fa947e;
+  color: white;
+  border: 2px solid black;
+}
+.menu-lateral {
+  grid-area: menu-lateral;
+  background-color: #cdfa7e;
+  color: black;
+  border: 2px solid black;
+  margin: 0;
+}
+.menu-central {
+  grid-area: menu-central;
+  background-color: #fcd224;
+  color: black;
+  border: 2px solid black;
+  height: 100dvh;
+}
+.pie-de-pagina {
+  grid-area: pie-de-pagina;
+  background-color: #d7fdff;
+  color: black;
+  border: 2px solid black;
+}
+.container-grid {
+  display: grid;
+  grid-template-rows: 0.5fr 5fr 0.5fr;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "menu-lateral navbar"
+    "menu-lateral menu-central"
+    "pie-de-pagina pie-de-pagina";
+}
