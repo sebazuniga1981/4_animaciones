@@ -11,27 +11,26 @@ body {
   grid-area: navbar;
   background-color: #fa947e;
   color: white;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
 }
 .menu-lateral {
   grid-area: menu-lateral;
-  background-color: #cdfa7e;
+  background-color: #f9b46f;
   color: black;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   margin: 0;
 }
 .menu-central {
   grid-area: menu-central;
-  background-color: #fcd224;
+  background-color: #f68b21;
   color: black;
-  border: 2px solid black;
-  height: 100dvh;
+  /*border: 2px solid black;*/
 }
 .pie-de-pagina {
   grid-area: pie-de-pagina;
-  background-color: #d7fdff;
+  background-color: #ca6b0d;
   color: black;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
 }
 /*!orden de clases para dispositivos moviles*/
 /* ?menu-lateral dispositivos moviles*/
@@ -71,25 +70,65 @@ body {
 .navbar > ul > li > a {
   list-style-type: none;
   text-decoration: none;
-  color: black;
+  color: rgb(179, 79, 79)
 }
 .navbar > ul > li > a:hover {
   list-style-type: none;
   text-decoration: none;
-  color: #cdfa7e;
+  color: black;
 }
 
 /*?menu-central dispositivos moviles*/
+
+.set-img {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  height: 100dvh;
+  scroll-behavior: auto;
+}
+
+.img-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1px;
+}
 .img-menu > img {
-  width: 100%;
+  width: 80%;
+  height: 40%;
   object-fit: cover;
+}
+.img-menu {
+  animation-name: imagen-zoom;
+  animation-iteration-count: 2s;
+  animation-duration: 2s;
+  position: relative;
+}
+.img-menu:hover {
+  animation-name: imagen-zoom;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-out;
+  position: relative;
+}
+
+@keyframes imagen-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /*! contenedor grilla dispositivos moviles*/
 .container-grid {
   display: grid;
   grid-template-rows: 0.5fr 5fr 0.5fr;
-  grid-template-columns: 0.5fr 3.5fr;
+  grid-template-columns: 1.5fr 4.5fr;
   grid-template-areas:
     "menu-lateral navbar"
     "menu-lateral menu-central"
@@ -107,25 +146,60 @@ body {
       "menu-lateral menu-central"
       "menu-lateral pie-de-pagina";
   }
-/*? menu central para pc/desktop*/
-  .menu-central {
+  /*? menu central para pc/desktop*/
+
+  .menu-central > .set-img {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
   }
-  .img-menu{
+  .menu-central {
+    gap: 10px;
+    padding-top: 100px;
+  }
+  .img-menu {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin: 10px;
+    justify-content: center;
+    align-items: center;
   }
   .img-menu > img {
     width: 80%;
+    height: 60%;
     object-fit: cover;
-    border-radius: 15px;
-    gap: 20px;
-   
-    
+  }
+  .img-menu {
+    animation-name: imagen-zoom;
+    animation-iteration-count: 2s;
+    animation-duration: 2s;
+    position: relative;
+  }
+  .navbar > ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-top: 20px;
+    /*border: 1px solid black;*/
+  }
+}
+.img-menu:hover {
+  animation-name: imagen-zoom;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-out;
+  position: relative;
+}
 
+@keyframes imagen-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
