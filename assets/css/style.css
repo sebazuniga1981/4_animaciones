@@ -36,7 +36,7 @@ body {
 /*!orden de clases para dispositivos moviles*/
 /* ?menu-lateral dispositivos moviles*/
 .menu-lateral {
-    padding: 0;
+  padding: 0;
 }
 
 .menu-lateral > ul {
@@ -44,8 +44,39 @@ body {
   flex-direction: column;
   padding: 0;
 }
-.menu-lateral > ul > li{
-    list-style-type: none;
+.menu-lateral > ul > li {
+  list-style-type: none;
+}
+.menu-lateral > ul > li > a {
+  list-style-type: none;
+  text-decoration: none;
+  color: rgb(179, 79, 79);
+}
+.menu-lateral > ul > li > a:hover {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+
+/*? menu navbar superior*/
+
+.navbar > ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 10px;
+  padding: 5px;
+}
+.navbar > ul > li > a {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+.navbar > ul > li > a:hover {
+  list-style-type: none;
+  text-decoration: none;
+  color: #cdfa7e;
 }
 
 /*?menu-central dispositivos moviles*/
@@ -63,4 +94,38 @@ body {
     "menu-lateral navbar"
     "menu-lateral menu-central"
     "pie-de-pagina pie-de-pagina";
+}
+
+/*! Contenedor grilla  desktop/PC*/
+@media (min-width: 576px) {
+  .container-grid {
+    display: grid;
+    grid-template-rows: 0.5fr 5fr 0.5fr;
+    grid-template-columns: 0.5fr 3.5fr;
+    grid-template-areas:
+      "navbar navbar"
+      "menu-lateral menu-central"
+      "menu-lateral pie-de-pagina";
+  }
+/*? menu central para pc/desktop*/
+  .menu-central {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  .img-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px;
+  }
+  .img-menu > img {
+    width: 80%;
+    object-fit: cover;
+    border-radius: 15px;
+    gap: 20px;
+   
+    
+
+  }
 }
