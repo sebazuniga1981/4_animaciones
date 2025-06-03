@@ -1,11 +1,10 @@
-/*! Reset WEB*/
-
 /*! declarar los grid area*/
 body {
   margin: 0;
   padding: 0;
   background: white;
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 .navbar {
   grid-area: navbar;
@@ -20,16 +19,22 @@ body {
   /*border: 2px solid black;*/
   margin: 0;
 }
+
 .menu-mapa {
-  grid-area: menu-central;
+  grid-area: menu-mapa;
   background-color: #f68b21;
   color: black;
-}
-.menu-central {
-  grid-area: menu-central;
-  background-color: #f68b21;
-  color: black;
+  height: 750px;
+
   /*border: 2px solid black;*/
+}
+.mapa {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+  margin: 10px;
 }
 .pie-de-pagina {
   grid-area: pie-de-pagina;
@@ -37,7 +42,24 @@ body {
   color: black;
   /*border: 2px solid black;*/
 }
-
+.carrito-vacio {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.cuadrado {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  background: rgb(211, 121, 17);
+  border: 1px solid #000;
+}
+.cuadrado > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
 /*!orden de clases para dispositivos moviles*/
 /* ?menu-lateral dispositivos moviles*/
 .menu-lateral {
@@ -150,11 +172,11 @@ footer > h6 {
 /*! contenedor grilla dispositivos moviles*/
 .container-grid {
   display: grid;
-  grid-template-rows: 0.5fr 5fr 0.5fr;
+  grid-template-rows: 0.5fr 7fr 0.5fr;
   grid-template-columns: 1.5fr 4.5fr;
   grid-template-areas:
     "menu-lateral navbar"
-    "menu-lateral menu-central"
+    "menu-lateral menu-mapa"
     "pie-de-pagina pie-de-pagina";
 }
 
@@ -166,50 +188,52 @@ footer > h6 {
     grid-template-columns: 0.5fr 3.5fr;
     grid-template-areas:
       "navbar navbar"
-      "menu-lateral menu-central"
+      "menu-lateral menu-mapa"
       "menu-lateral pie-de-pagina";
   }
 
- 
   /*? menu central para pc/desktop*/
-
-  .menu-central > .set-img {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 20px;
+  .menu-mapa {
+    grid-area: menu-mapa;
+    background-color: #f68b21;
+    color: black;
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .menu-central {
-    gap: 10px;
-    padding-top: 100px;
-  }
-  .img-menu {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    /*border: 2px solid black;*/
   }
-  .img-menu > img {
+
+  .mapa > iframe {
     width: 80%;
-    height: 60%;
-    object-fit: cover;
-  }
-  .img-menu {
-    animation-name: imagen-zoom;
-    animation-iteration-count: 2s;
-    animation-duration: 2s;
-    position: relative;
-  }
-  .navbar > ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    padding-top: 20px;
-    /*border: 1px solid black;*/
+    height: 80%;
   }
 }
+.img-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img-menu > img {
+  width: 80%;
+  height: 60%;
+  object-fit: cover;
+}
+.img-menu {
+  animation-name: imagen-zoom;
+  animation-iteration-count: 2s;
+  animation-duration: 2s;
+  position: relative;
+}
+.navbar > ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-top: 20px;
+  /*border: 1px solid black;*/
+}
+
 .img-menu:hover {
   animation-name: imagen-zoom;
   transform: scale(0.9);
