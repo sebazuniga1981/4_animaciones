@@ -105,18 +105,7 @@ body {
   height: 40%;
   object-fit: cover;
 }
-.img-menu {
-  animation-name: imagen-zoom;
-  animation-iteration-count: 2s;
-  animation-duration: 2s;
-  position: relative;
-}
-.img-menu:hover {
-  animation-name: imagen-zoom;
-  transform: scale(0.9);
-  transition: transform 0.3s ease-out;
-  position: relative;
-}
+
 .footer-item > a > img {
   width: 30px;
   justify-content: center;
@@ -132,6 +121,21 @@ footer > h6 {
   justify-content: center;
   gap: 10px;
   padding-top: 10px;
+}
+
+
+/* ! keyframes para dispositivos moviles */
+.img-menu {
+  animation-name: imagen-zoom;
+  animation-iteration-count: 2s;
+  animation-duration: 2s;
+  position: relative;
+}
+.img-menu:hover {
+  animation-name: imagen-zoom;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-out;
+  position: relative;
 }
 
 @keyframes imagen-zoom {
