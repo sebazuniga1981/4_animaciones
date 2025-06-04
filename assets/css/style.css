@@ -165,7 +165,7 @@ footer > h6 {
 @media (min-width: 576px) {
   .container-grid {
     display: grid;
-    grid-template-rows: 0.5fr 5fr 0.5fr;
+    grid-template-rows: 50px 5fr 100px;
     grid-template-columns: 0.5fr 3.5fr;
     grid-template-areas:
       "navbar navbar"
@@ -212,7 +212,19 @@ footer > h6 {
     padding-top: 20px;
     /*border: 1px solid black;*/
   }
+.pie-de-pagina{
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr;
 }
+
+.pie-de-pagina > .footer-item{
+  padding-top: 20px;
+
+}
+.pie-de-pagina > h6{
+  padding-bottom: 1px;
+}
+/* ! @keyframes para laptop/pc*/
 .img-menu:hover {
   animation-name: imagen-zoom;
   transform: scale(0.9);

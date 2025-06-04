@@ -24,5 +24,5 @@ negro y al ubicar el cursor sobre ellas se muestren en su color original.
 
  El footer utiliza Flexbox o CSS Grid para su diseño y se ajusta en función del
 tamaño de la pantalla utilizando media queries.
-5. La página debe emplear CSS para crear una apariencia visual coherente, con colores
-y estilos que se ajustan al tema y la marca de la página. (2 Puntos)
+
+5. La página debe emplear CSS para crear una apariencia visual coherente, con colores y estilos que se ajustan al tema y la marca de la página. (2 Puntos)
