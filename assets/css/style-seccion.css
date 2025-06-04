@@ -1,0 +1,234 @@
+/*! Reset WEB*/
+
+/*! declarar los grid area*/
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-family: "Roboto", sans-serif;
+}
+.navbar {
+  grid-area: navbar;
+  background-color: #fa947e;
+  color: white;
+  /*border: 2px solid black;*/
+}
+.menu-lateral {
+  grid-area: menu-lateral;
+  background-color: #f9b46f;
+  color: black;
+  /*border: 2px solid black;*/
+  margin: 0;
+}
+.menu-mapa {
+  grid-area: menu-central;
+  background-color: #f68b21;
+  color: black;
+}
+.menu-central {
+  grid-area: menu-central;
+  background-color: #f68b21;
+  color: black;
+  overflow-y: auto;
+  /*border: 2px solid black;*/
+}
+.pie-de-pagina {
+  grid-area: pie-de-pagina;
+  background-color: #ca6b0d;
+  color: black;
+  /*border: 2px solid black;*/
+}
+
+/*!orden de clases para dispositivos moviles*/
+/* ?menu-lateral dispositivos moviles*/
+.menu-lateral {
+  padding: 0;
+}
+
+.menu-lateral > ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.menu-lateral > ul > li {
+  list-style-type: none;
+}
+.menu-lateral > ul > li > a {
+  list-style-type: none;
+  text-decoration: none;
+  color: rgb(179, 79, 79);
+}
+.menu-lateral > ul > li > a:hover {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+
+/*? menu navbar superior*/
+
+.navbar > ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 10px;
+  padding: 5px;
+}
+
+.navbar > ul > li > a {
+  list-style-type: none;
+  text-decoration: none;
+  color: rgb(179, 79, 79);
+}
+.navbar > ul > li > a:hover {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+
+/*?menu-central dispositivos moviles*/
+
+.set-img {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  height: 100dvh;
+  scroll-behavior: auto;
+}
+
+.img-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.img-menu > img {
+  width: 50%;
+
+  object-fit: cover;
+}
+/*
+.img-menu {
+  animation-name: imagen-zoom;
+  animation-iteration-count: 2s;
+  animation-duration: 2s;
+  position: relative;
+}
+.img-menu:hover {
+  animation-name: imagen-zoom;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-out;
+  position: relative;
+}
+  */
+.footer-item > a > img {
+  width: 30px;
+  justify-content: center;
+}
+footer > h6 {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  padding: 5px;
+}
+.footer-item {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+@keyframes imagen-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*! contenedor grilla dispositivos moviles*/
+.container-grid {
+  display: grid;
+  grid-template-rows: 0.5fr 5fr 0.5fr;
+  grid-template-columns: 1.5fr 4.5fr;
+  grid-template-areas:
+    "menu-lateral navbar"
+    "menu-lateral menu-central"
+    "pie-de-pagina pie-de-pagina";
+}
+
+/*! Contenedor grilla  desktop/PC*/
+@media (min-width: 576px) {
+  .container-grid {
+    display: grid;
+    grid-template-rows: 0.5fr 5fr 0.5fr;
+    grid-template-columns: 0.5fr 3.5fr;
+    grid-template-areas:
+      "navbar navbar"
+      "menu-lateral menu-central"
+      "menu-lateral pie-de-pagina";
+  }
+
+  /*? menu central para pc/desktop*/
+
+  .set-img {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    gap: 10px;
+    overflow: hidden;
+    height: 100%;
+  }
+  .img-menu {
+    border: 2px solid #a9abb4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  .img-menu > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /*
+  .img-menu {
+    animation-name: imagen-zoom;
+    animation-iteration-count: 2s;
+    animation-duration: 2s;
+    position: relative;
+  }*/
+  /*
+  .navbar > ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-top: 20px;
+    /*border: 1px solid black;*/
+} /*
+.img-menu:hover {
+  animation-name: imagen-zoom;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-out;
+  position: relative;
+}
+*/
+/*
+@keyframes imagen-zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+
+}
+*/
